@@ -79,7 +79,7 @@ app.put('/api/products/:id', upload.single('image'), async (req, res) => {
 		const updatedFields = { name, price, description, status }
 
 		if (req.file) {
-			updatedFields.image = `http://localhost:${PORT}/uploads/${req.file.filename}`
+			updatedFields.image = `https://smokedfish.marketlistem.site/uploads/${req.file.filename}`
 		}
 
 		const updatedProduct = await Product.findByIdAndUpdate(id, updatedFields, {
@@ -137,5 +137,5 @@ app.use('/uploads', express.static('uploads'))
 
 // Запуск сервера
 app.listen(PORT, () => {
-	console.log(`Сервер запущен на http://localhost:${PORT}`)
+	console.log(`Сервер запущен на https://smokedfish.marketlistem.site`)
 })
