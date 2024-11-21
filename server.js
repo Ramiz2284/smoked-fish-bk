@@ -60,7 +60,7 @@ app.post('/api/products', upload.single('image'), async (req, res) => {
 			name,
 			price,
 			description,
-			image: `http://localhost:${PORT}/uploads/${req.file.filename}`,
+			image: `https://smokedfish.marketlistem.site/uploads/${req.file.filename}`,
 			status,
 		})
 
